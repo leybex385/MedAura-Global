@@ -9,6 +9,11 @@
     <!-- Favicon -->
     <link rel="icon" href="image/favicon.jpg" type="image/jpeg">
 
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="MedAura Global | Medical Aesthetics" />
@@ -43,11 +48,13 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background: var(--bg-primary);
             color: var(--text-main);
             line-height: 1.7;
             padding-top: 70px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4 {
@@ -70,22 +77,22 @@
             margin: auto;
         }
 
-        /* NAVIGATION */
+        /* NAVIGATION - PREMIUM CLINICAL STYLE */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            height: 90px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
             display: flex;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         .nav-container {
@@ -95,34 +102,40 @@
             width: 100%;
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 30px;
         }
 
         .nav-brand {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 800;
-            color: var(--accent);
+            color: #0f172a;
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
         }
 
         .nav-brand span {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
             font-weight: 400;
-            color: var(--text-heading);
+            color: #0d9488;
         }
 
         .nav-brand::before {
-            content: '✜';
-            font-size: 20px;
-            color: var(--accent);
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #0d9488;
+            mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/></svg>') center/contain no-repeat;
+            -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/></svg>') center/contain no-repeat;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             list-style: none;
             margin: 0;
             padding: 0;
@@ -130,10 +143,12 @@
         }
 
         .nav-links a {
-            color: var(--text-heading);
+            color: #475569;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
             padding-bottom: 4px;
             transition: color 0.3s ease;
@@ -145,8 +160,9 @@
             width: 0;
             height: 2px;
             bottom: 0;
-            left: 0;
-            background-color: var(--accent);
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0d9488;
             transition: width 0.3s ease-out;
         }
 
@@ -155,23 +171,26 @@
         }
 
         .nav-links a:not(.nav-cta):hover {
-            color: var(--accent);
+            color: #0f172a;
         }
 
         .nav-cta {
-            background: var(--accent);
+            background: linear-gradient(135deg, #0d9488, #0f766e);
             color: #ffffff !important;
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease !important;
-            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.2);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+            transition: all 0.4s ease !important;
+            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-cta:hover {
-            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
+            box-shadow: 0 15px 30px rgba(13, 148, 136, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         .nav-cta::after {
@@ -261,14 +280,20 @@
             height: 100%;
             object-fit: cover;
             opacity: 1; /* Fully visible */
-            filter: blur(1.5px); /* Slight blur as requested */
             transform: scale(1.05);
             pointer-events: none;
         }
 
-        /* Removed gradient overlay to make video 100% clear */
+        /* Gradient overlay: solid white on the left for text readability, fading to clear on the right for video visibility */
         .hero::after {
-            display: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0) 100%);
+            z-index: 1;
         }
 
         .hero-content {
@@ -279,39 +304,65 @@
             align-items: center;
         }
 
+        .hero-glass-box {
+            padding: 50px 0;
+            max-width: 850px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
         .hero h1 {
-            font-size: 52px;
-            max-width: 800px;
-            margin-bottom: 10px;
-            color: var(--text-heading);
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.9);
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: #0f172a;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: #0d9488;
         }
 
         .hero p {
-            max-width: 650px;
             font-size: 20px;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            font-weight: 600;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.95), 0 2px 10px rgba(255, 255, 255, 0.9);
+            color: #334155;
+            margin-bottom: 40px;
+            font-weight: 500;
+            line-height: 1.7;
+            max-width: 650px;
         }
 
         .btn-cta {
             display: inline-block;
-            padding: 14px 32px;
-            background: var(--accent);
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #0d9488, #0f766e);
             color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+            font-weight: 700;
+            border-radius: 50px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 13px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-cta:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 148, 136, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         @keyframes subtlePulse {
@@ -832,6 +883,26 @@
             border-color: #5eead4;
             box-shadow: 0 0 10px rgba(13, 148, 136, 0.2);
         }
+
+        .hover-elevate {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+        }
+        .hover-elevate:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12) !important;
+        }
+
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes spin-slow {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
     </style>
 </head>
 
@@ -865,9 +936,9 @@
         </video>
 
         <div class="hero-content container">
-            <div class="reveal">
-                <h2 style="font-size: 20px; color: var(--accent); margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase;">MedAura Global</h2>
-                <h1>Advancing Global Healthcare Through Innovation, Trust, and Beauty</h1>
+            <div class="reveal hero-glass-box">
+                <h2 class="hero-subtitle">MedAura Global</h2>
+                <h1>Advancing Global Healthcare Through <span>Innovation, Trust, and Beauty</span></h1>
                 <p>
                     Connecting innovative medical devices with healthcare providers worldwide. Specialized in sourcing, distribution, and international trade of medical and aesthetic equipment.
                 </p>
@@ -876,68 +947,165 @@
         </div>
     </section>
 
-    <!-- ABOUT MEDAURA GLOBAL -->
-    <section id="about" class="reveal blob-bg">
-        <div class="container">
-            <div class="grid-2" style="align-items: center;">
-                <div>
-                    <h2>About MedAura Global</h2>
-                    <p style="font-size: 18px; color: var(--accent); margin-bottom: 24px; font-weight: 600;">Global Sourcing & Healthcare Technology Distribution</p>
-                    <p>
-                        MedAura Global is an international medical aesthetics and healthcare technology company dedicated to connecting innovative medical devices with healthcare providers worldwide.
+    <!-- ABOUT MEDAURA GLOBAL (EDITORIAL SPLIT) -->
+    <section id="about" style="position: relative; display: flex; flex-wrap: wrap; min-height: 80vh;">
+        <!-- Left Side: Typography -->
+        <div style="flex: 1 1 500px; padding: 10% 5% 10% max(5%, calc((100% - 1200px) / 2)); background: #ffffff; display: flex; flex-direction: column; justify-content: center;">
+            <h2 style="font-size: 56px; font-weight: 800; color: #0f172a; letter-spacing: -2px; line-height: 1.1; margin-bottom: 25px;">
+                Pioneering the Future of <br><span style="color: var(--accent);">Medical Aesthetics.</span>
+            </h2>
+            <div style="border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px;">
+                <p style="font-size: 20px; color: #334155; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: 1px;">Global Sourcing & Healthcare Technology Distribution</p>
+            </div>
+            <p style="font-size: 18px; color: #475569; line-height: 1.8; margin-bottom: 25px; max-width: 600px;">
+                MedAura Global is an international medical aesthetics and healthcare technology company dedicated to connecting innovative medical devices with healthcare providers worldwide.
+            </p>
+            <p style="font-size: 18px; color: #475569; line-height: 1.8; max-width: 600px;">
+                We specialize in the sourcing, distribution, and international trade of medical and aesthetic equipment. We are committed to delivering high-quality technologies that empower healthcare professionals, improve patient outcomes, and make advanced solutions accessible worldwide.
+            </p>
+        </div>
+        
+        <!-- Right Side: Dark Editorial Block -->
+        <div style="flex: 1 1 500px; background: linear-gradient(135deg, #0f172a 0%, #115e59 100%); padding: 10% max(5%, calc((100% - 1200px) / 2)) 10% 5%; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
+            
+            <!-- Abstract background pattern inside dark block -->
+            <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, rgba(0,0,0,0) 70%); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -50px; left: -50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, rgba(0,0,0,0) 70%); border-radius: 50%;"></div>
+            
+            <!-- Dark Glass Mission Card -->
+            <div style="background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 60px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); border-top: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); position: relative; z-index: 2;">
+                
+                <h3 style="margin: 0 0 30px 0; color: #5eead4; font-size: 16px; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; display: flex; align-items: center; gap: 12px;">
+                    <span style="display: block; width: 30px; height: 2px; background: #5eead4;"></span> Our Mission
+                </h3>
+                
+                <p style="font-size: 32px; font-weight: 300; color: #f8fafc; line-height: 1.4; margin-bottom: 50px; position: relative;">
+                    <span style="font-size: 80px; color: rgba(45, 212, 191, 0.2); position: absolute; top: -40px; left: -30px; font-family: serif; font-weight: 800;">"</span>
+                    Advancing Global Healthcare Through Innovation, Trust, and Beauty.
+                </p>
+                
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px;">
+                    <h4 style="margin: 0 0 15px 0; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px;">Who We Serve</h4>
+                    <p style="font-size: 16px; color: #cbd5e1; margin: 0; line-height: 1.7; font-weight: 300;">
+                        Serving hospitals, aesthetic clinics, medical spas, distributors, and healthcare institutions across North America, Asia-Pacific, and Australia.
                     </p>
-                    <p>
-                        The company specializes in the sourcing, distribution, and international trade of medical and aesthetic equipment. We are committed to delivering high-quality medical and aesthetic technologies that empower healthcare professionals, improve patient outcomes, and make advanced medical solutions accessible worldwide.
-                    </p>
-                </div>
-                <div class="card" style="background: var(--bg-secondary); border: 1px solid var(--bg-secondary);">
-                    <h3 style="margin-top: 0; color: var(--accent);">Our Mission</h3>
-                    <p style="font-size: 22px; font-weight: 600; color: var(--text-heading); line-height: 1.5; font-style: italic;">
-                        "Advancing Global Healthcare Through Innovation, Trust, and Beauty."
-                    </p>
-                    <hr style="border-color: #cbd5e1; margin: 30px 0; border-top: none; border-bottom: 1px solid;">
-                    <h4 style="margin-bottom: 10px;">Who We Serve</h4>
-                    <p style="font-size: 15px; color: var(--text-main);">Serving hospitals, aesthetic clinics, medical spas, distributors, and healthcare institutions across North America, Asia-Pacific, and Australia.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CORE BUSINESS -->
-    <section id="business" class="pattern-dots" style="background-color: var(--bg-tertiary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="container reveal">
-            <h2 style="text-align: center; margin-bottom: 60px;">Our Core Business</h2>
+    <!-- CORE BUSINESS: Z-PATTERN FEATURE ROWS -->
+    <section id="business" style="background-color: #0f172a; padding: 120px 0; overflow: hidden; position: relative;">
+        <!-- Background Ambient Glow -->
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 600px; background: radial-gradient(ellipse at top, rgba(94, 234, 212, 0.05) 0%, rgba(15, 23, 42, 0) 70%); pointer-events: none;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="text-align: center; margin-bottom: 120px;">
+                <p style="color: #5eead4; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px;">Our Expertise</p>
+                <h2 style="font-size: 56px; color: #ffffff; font-weight: 800; letter-spacing: -2px; margin: 0;">Comprehensive Capabilities</h2>
+            </div>
 
-            <div class="grid-2">
-                <!-- Medical Devices -->
-                <div class="card">
-                    <div class="icon-box">⚕️</div>
-                    <h3 style="color: var(--text-heading); margin-bottom: 20px;">Medical Devices</h3>
-                    <ul class="content-list">
-                        <li>Diagnostic & Patient Monitoring Equipment</li>
-                        <li>Respiratory & Life Support Equipment</li>
-                        <li>Medical Imaging Systems</li>
-                        <li>Therapeutic Medical Devices</li>
-                    </ul>
+            <!-- ROW 1: Medical Devices (Left Text, Right Visual) -->
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 80px; margin-bottom: 150px;">
+                <!-- Text Content -->
+                <div style="flex: 1 1 500px;">
+                    <h3 style="font-size: 42px; color: #ffffff; margin-bottom: 40px; font-weight: 800; letter-spacing: -1px;">Medical Devices</h3>
+                    <div style="display: flex; flex-direction: column; gap: 40px;">
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.2); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">01</div>
+                                Diagnostic & Monitoring
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">State-of-the-art vital sign monitors, ECGs, and diagnostic imaging for precise patient care and analysis.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.2); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">02</div>
+                                Life Support Systems
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">Advanced ventilators, anesthesia machines, and life-saving respiratory technologies for critical care units.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.2); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">03</div>
+                                Medical Imaging
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">High-resolution ultrasound, MRI components, and advanced X-ray systems for accurate clinical assessments.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.2); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">04</div>
+                                Therapeutic Devices
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">Innovative therapeutic and surgical solutions designed to accelerate recovery and enhance patient well-being.</p>
+                        </div>
+                    </div>
                 </div>
+                <!-- Abstract Visual -->
+                <div style="flex: 1 1 500px; display: flex; justify-content: center; align-items: center; position: relative; min-height: 500px;">
+                    <!-- Outer Dashed Ring -->
+                    <div style="position: absolute; width: 450px; height: 450px; border-radius: 50%; border: 2px dashed rgba(94, 234, 212, 0.2); animation: spin-slow 40s linear infinite;"></div>
+                    <!-- Inner Solid Ring -->
+                    <div style="position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(94, 234, 212, 0.4); animation: spin-slow 20s linear infinite reverse;"></div>
+                    <!-- Central Glowing Orb -->
+                    <div style="position: absolute; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle, rgba(94, 234, 212, 0.4) 0%, rgba(94, 234, 212, 0) 70%); animation: pulse-glow 4s ease-in-out infinite;"></div>
+                    <!-- Geometric Floating Centerpiece (No Icon) -->
+                    <div style="position: absolute; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; animation: float-slow 6s ease-in-out infinite; z-index: 10;">
+                        <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,0.9); box-shadow: 0 20px 40px rgba(13,148,136,0.2); transform: translateX(-20px);"></div>
+                        <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; background: rgba(13,148,136,0.8); box-shadow: 0 20px 40px rgba(13,148,136,0.3); transform: translateX(20px); mix-blend-mode: multiply;"></div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Aesthetic Equipment -->
-                <div class="card">
-                    <div class="icon-box">✨</div>
-                    <h3 style="color: var(--text-heading); margin-bottom: 20px;">Medical Aesthetic Equipment</h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <ul class="content-list" style="margin: 0;">
-                            <li>Professional Laser Systems</li>
-                            <li>Microneedling & PRP Systems</li>
-                            <li>RF Skin Tightening Equipment</li>
-                            <li>HIFU Systems</li>
-                        </ul>
-                        <ul class="content-list" style="margin: 0;">
-                            <li>IPL Photorejuvenation Equipment</li>
-                            <li>Body Contouring Technologies</li>
-                            <li>Facial Rejuvenation Devices</li>
-                            <li>Dermatology & Dental Aesthetic</li>
-                        </ul>
+            <!-- ROW 2: Aesthetic Equipment (Left Visual, Right Text) -->
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 80px; flex-direction: row-reverse;">
+                <!-- Text Content -->
+                <div style="flex: 1 1 500px;">
+                    <h3 style="font-size: 42px; color: #ffffff; margin-bottom: 40px; font-weight: 800; letter-spacing: -1px;">Medical Aesthetic Equipment</h3>
+                    <div style="display: flex; flex-direction: column; gap: 40px;">
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.15); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">01</div>
+                                Professional Lasers
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">Clinical-grade laser technologies for permanent hair reduction, pigmentation correction, and skin resurfacing.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.15); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">02</div>
+                                RF & Microneedling
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">Next-generation radiofrequency and fractional microneedling devices for non-surgical skin tightening and collagen induction.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.15); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">03</div>
+                                Body Contouring
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">Non-invasive fat reduction, cryolipolysis, and electromagnetic muscle toning systems for aesthetic clinics.</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                <div style="color: rgba(94, 234, 212, 0.15); font-weight: 800; font-size: 28px; font-family: 'Times New Roman', serif; font-style: italic;">04</div>
+                                Facial Rejuvenation
+                            </h4>
+                            <p style="font-size: 16px; color: #cbd5e1; line-height: 1.8; margin: 0; padding-left: 45px;">Advanced HIFU, IPL, and specialized multi-platform systems for anti-aging and comprehensive facial treatments.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Abstract Visual -->
+                <div style="flex: 1 1 500px; display: flex; justify-content: center; align-items: center; position: relative; min-height: 500px;">
+                    <!-- Outer Dashed Ring -->
+                    <div style="position: absolute; width: 450px; height: 450px; border-radius: 50%; border: 2px dashed rgba(255, 255, 255, 0.1); animation: spin-slow 30s linear infinite reverse;"></div>
+                    <!-- Hexagon Base -->
+                    <div style="position: absolute; width: 280px; height: 280px; background: rgba(255, 255, 255, 0.02); transform: rotate(45deg); border: 1px solid rgba(255, 255, 255, 0.05); animation: spin-slow 25s linear infinite;"></div>
+                    <!-- Central Glowing Orb -->
+                    <div style="position: absolute; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%); animation: pulse-glow 5s ease-in-out infinite alternate;"></div>
+                    <!-- Geometric Floating Centerpiece (No Icon) -->
+                    <div style="position: absolute; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; animation: float-slow 7s ease-in-out infinite; z-index: 10;">
+                        <div style="position: absolute; width: 90px; height: 90px; border-radius: 20px; background: rgba(15,23,42,0.9); box-shadow: 0 20px 40px rgba(15,23,42,0.2); transform: rotate(45deg) translateY(-15px);"></div>
+                        <div style="position: absolute; width: 90px; height: 90px; border-radius: 20px; border: 2px solid #5eead4; background: rgba(94,234,212,0.1); backdrop-filter: blur(4px); box-shadow: 0 20px 40px rgba(94,234,212,0.2); transform: rotate(45deg) translateY(15px);"></div>
                     </div>
                 </div>
             </div>
@@ -1020,79 +1188,235 @@
         </div>
     </section>
 
-    <!-- MAYA MILLER FOCUS -->
-    <section id="leadership" class="reveal blob-bg">
-        <div class="container">
-            <h2>Our Leadership</h2>
+    <!-- MAYA MILLER FOCUS: CLINICAL PRECISION (OPTION 3) -->
+    <style>
+        .clinical-timeline {
+            margin-top: 40px;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .clinical-timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(13, 148, 136, 0), rgba(13, 148, 136, 0.4) 10%, rgba(13, 148, 136, 0.4) 90%, rgba(13, 148, 136, 0));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        .clinical-timeline-item {
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-top: -40px; /* Pulls items closer for a tight zigzag */
+        }
+        .clinical-timeline-item:first-child {
+            margin-top: 0;
+        }
+        .clinical-timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+        .clinical-timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
+        .clinical-timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-color: #ffffff;
+            border: 4px solid #0d9488;
+            top: 50px;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 0 6px rgba(13, 148, 136, 0.1);
+        }
+        .clinical-timeline-item.left::after {
+            right: -13px;
+        }
+        .clinical-timeline-item.right::after {
+            left: -13px;
+        }
+        .timeline-content {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
+            border: 1px solid rgba(13, 148, 136, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(13, 148, 136, 0.12);
+        }
+        .frosted-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255,255,255,0.5);
+            padding: 50px;
+        }
+        .clinical-photo {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15);
+            border: 4px solid #ffffff;
+            transition: transform 0.4s ease;
+        }
+        .clinical-photo:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 
-            <div class="founder-section">
-                <div style="display: flex; flex-direction: column; gap: 24px;">
-                    <img src="image/maya1.jpg" alt="Maya Miller" class="founder-img">
-                    <img src="image/maya2.jpg" alt="Maya Miller" class="founder-img">
-                </div>
-                <div class="founder-content">
-                    <div class="founder-identity">
-                        <h3>Maya Miller</h3>
-                        <p>Senior Partner, MedAura Global</p>
+    <section id="leadership" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 120px 0; position: relative; overflow: hidden;">
+        <!-- Clean Room Background Accents -->
+        <div style="position: absolute; top: -20%; right: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -20%; left: -10%; width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(13, 148, 136, 0.05) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; pointer-events: none;"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <!-- WOW FACTOR TITLE -->
+            <div style="position: relative; text-align: center; margin-bottom: 140px; padding-top: 60px;">
+                <!-- Massive Background Typography -->
+                <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); font-size: clamp(80px, 12vw, 200px); font-weight: 900; color: rgba(15, 23, 42, 0.03); text-transform: uppercase; letter-spacing: -2px; z-index: 0; pointer-events: none; line-height: 1; white-space: nowrap; font-family: 'Arial Black', sans-serif;">LEADERSHIP</div>
+                
+                <!-- Foreground Title -->
+                <div style="position: relative; z-index: 2;">
+                    <div style="display: inline-flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <div style="width: 40px; height: 2px; background: #0d9488;"></div>
+                        <p style="color: #0d9488; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; font-size: 14px; margin: 0;">Executive Profile</p>
+                        <div style="width: 40px; height: 2px; background: #0d9488;"></div>
                     </div>
+                    <h2 style="font-size: 64px; color: #0f172a; font-weight: 800; letter-spacing: -2px; margin: 0;">Meet the <span style="font-family: 'Times New Roman', serif; font-style: italic; color: #0d9488; font-weight: 400;">Founder</span></h2>
+                </div>
+            </div>
 
-                    <div class="founder-bio">
-                        <p>
+            <!-- Z-PATTERN ALTERNATING LAYOUT -->
+            <div style="display: flex; flex-direction: column; gap: 80px;">
+                
+                <!-- Row 1: Image Left, Text Right -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <img src="image/maya1.jpg" alt="Maya Miller" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15); object-fit: cover;">
+                    </div>
+                    <div>
+                        <div style="border-bottom: 1px solid rgba(15, 23, 42, 0.1); padding-bottom: 25px; margin-bottom: 30px;">
+                            <h3 style="font-size: 56px; color: #0f172a; margin: 0 0 10px 0; font-weight: 800; letter-spacing: -1px;">Maya Miller</h3>
+                            <p style="font-size: 22px; color: #0d9488; margin: 0; font-weight: 500; letter-spacing: 0.5px;">Senior Partner, MedAura Global</p>
+                        </div>
+                        <p style="font-size: 18px; color: #475569; line-height: 1.9; margin: 0 0 20px 0;">
                             Maya Miller is the Senior Partner of MedAura Global, an international medical aesthetics equipment trading company specializing in global sourcing, healthcare technology distribution, and cross-border medical solutions.
                         </p>
-                        <p>
-                            She has over 16 years of experience in international business, healthcare trade, and global market development, with extensive expertise in North American and Asia-Pacific markets. Throughout her career, Maya has successfully built strategic partnerships between manufacturers, distributors, hospitals, and aesthetic clinics, helping healthcare organizations access advanced medical technologies through efficient international supply chains.
+                        <p style="font-size: 18px; color: #475569; line-height: 1.9; margin: 0;">
+                            She has over 16 years of experience in international business, healthcare trade, and global market development, with extensive expertise in North American and Asia-Pacific markets.
                         </p>
-                        <p>
-                            Today, Maya leads the company's international strategy, helping healthcare providers and aesthetic clinics gain access to innovative medical technologies through compliant global sourcing and distribution networks. Maya currently oversees a multidisciplinary international team of 15 professionals.
-                        </p>
-                        
-                        <div style="margin-top: 30px; padding: 25px; background: var(--bg-tertiary); border-radius: 8px; border-left: 4px solid var(--accent);">
-                            <h4 style="margin-top: 0; color: var(--accent);">Education</h4>
-                            <p style="margin-bottom: 5px; color: var(--text-heading);"><strong>Fudan University</strong> — Bachelor of Business Administration</p>
-                            <p style="font-size: 14px; margin-bottom: 15px;">Majors: Business Administration, International Economics</p>
-                            <p style="font-size: 14px; margin-bottom: 0;">At the age of 19, Maya was selected for an international academic exchange program and continued her joint studies in <strong>Berkeley, California</strong>, where she focused on international business management, global economics, and cross-border commerce.</p>
-                        </div>
                     </div>
                 </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <p style="font-size: 18px; color: #475569; line-height: 1.9; margin: 0 0 20px 0;">
+                            Throughout her career, Maya has successfully built strategic partnerships between manufacturers, distributors, hospitals, and aesthetic clinics, helping healthcare organizations access advanced medical technologies through efficient international supply chains.
+                        </p>
+                        <p style="font-size: 18px; color: #475569; line-height: 1.9; margin: 0 0 40px 0;">
+                            Today, Maya leads the company's international strategy, helping healthcare providers and aesthetic clinics gain access to innovative medical technologies through compliant global sourcing and distribution networks.
+                        </p>
+                        
+                        <!-- Clinical Education Data -->
+                        <div style="padding: 30px; background: #ffffff; border-radius: 16px; border-left: 5px solid #0d9488; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                            <h4 style="margin: 0 0 15px 0; color: #0d9488; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800;">Academic Profile</h4>
+                            <p style="margin: 0 0 8px 0; color: #0f172a; font-size: 20px; font-weight: 800;">Fudan University <span style="color: #64748b; font-weight: 400; font-size: 16px; font-family: 'Times New Roman', serif; font-style: italic;">— Bachelor of Business Administration</span></p>
+                            <p style="font-size: 15px; color: #475569; margin: 0 0 15px 0; font-weight: 500;">Majors: Business Administration, International Economics</p>
+                            <p style="font-size: 15px; color: #64748b; margin: 0; line-height: 1.7;">At the age of 19, Maya was selected for an international academic exchange program and continued her joint studies in <strong style="color: #0f172a;">Berkeley, California</strong>, focusing on international business management.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="image/maya2.jpg" alt="Maya Miller" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15); object-fit: cover;">
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
-    <section style="padding-top: 0;" class="reveal">
+    <!-- CLINICAL CHART TIMELINE (PROFESSIONAL JOURNEY) -->
+    <section style="background: #f8fafc; padding-bottom: 120px; position: relative;">
         <div class="container">
-            <h3>Professional Journey</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2009</div>
-                    <div class="timeline-title">International Business Specialist, Shanghai International Trade Group</div>
-                    <p>Began her career in international trade, managing overseas procurement, supplier relationships, and export operations.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2010</div>
-                    <div class="timeline-title">Project Manager</div>
-                    <p>Promoted after demonstrating outstanding performance. Responsible for United States & Canadian Markets, International Customer Relations, and Project Coordination.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2014</div>
-                    <div class="timeline-title">Global Leadership Development Program (New York)</div>
-                    <p>Selected for the company's elite program. Completed a six-month management assignment in NY, working alongside multinational teams in international trade, healthcare distribution, and strategic operations.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2015</div>
-                    <div class="timeline-title">Asia-Pacific Regional Business Manager</div>
-                    <p>Led regional commercial expansion across Asia-Pacific while managing distributor partnerships, international procurement, and cross-border healthcare projects.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2016</div>
-                    <div class="timeline-title">Independent Consulting Career</div>
-                    <p>Accepted an invitation from a U.S. international business consulting firm. Provided cross-border business consulting services across US, China, and Australia.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-title">Co-founded MedAura Global</div>
-                    <p>Established the international strategy to help healthcare providers access innovative medical technologies globally.</p>
+            <h3 style="font-size: 32px; color: #0f172a; margin-bottom: 60px; font-weight: 800; text-align: center;">Professional Journey</h3>
+            
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div class="clinical-timeline">
+                    <!-- 2009 (Left) -->
+                    <div class="clinical-timeline-item left">
+                        <div class="timeline-content">
+                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2009</div>
+                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">International Business Specialist</div>
+                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">Shanghai International Trade Group</div>
+                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Began her career in international trade, managing overseas procurement, supplier relationships, and export operations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2010 (Right) -->
+                    <div class="clinical-timeline-item right">
+                        <div class="timeline-content">
+                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2010</div>
+                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Project Manager</div>
+                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">US & Canadian Markets</div>
+                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Promoted after demonstrating outstanding performance. Responsible for International Customer Relations and Project Coordination.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2014 (Left) -->
+                    <div class="clinical-timeline-item left">
+                        <div class="timeline-content">
+                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2014</div>
+                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Global Leadership Development Program</div>
+                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">New York</div>
+                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Selected for the company's elite program. Completed a six-month management assignment in NY, working alongside multinational teams in international trade, healthcare distribution, and strategic operations.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2015 (Right) -->
+                    <div class="clinical-timeline-item right">
+                        <div class="timeline-content">
+                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2015</div>
+                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Asia-Pacific Regional Business Manager</div>
+                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">APAC Division</div>
+                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Led regional commercial expansion across Asia-Pacific while managing distributor partnerships, international procurement, and cross-border healthcare projects.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2016 (Left) -->
+                    <div class="clinical-timeline-item left">
+                        <div class="timeline-content">
+                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2016</div>
+                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Independent Consulting Career</div>
+                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">Global Markets</div>
+                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Accepted an invitation from a U.S. international business consulting firm. Provided cross-border business consulting services across US, China, and Australia.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2018 (Right) -->
+                    <div class="clinical-timeline-item right">
+                        <div class="timeline-content">
+                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2018</div>
+                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Co-founded MedAura Global</div>
+                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">Executive Leadership</div>
+                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Established the international strategy to help healthcare providers access innovative medical technologies globally.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1132,112 +1456,193 @@
     </section>
 
     <!-- EXECUTIVE TEAM -->
-    <section id="team" class="reveal">
+    <section id="team" style="background: #f8fafc; padding: 100px 0; position: relative;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;">Executive Leadership</h2>
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2 style="font-size: 50px; color: #0f172a; font-weight: 800; letter-spacing: -1.5px; margin: 0;">Executive <span style="font-family: 'Times New Roman', serif; font-style: italic; color: #0d9488; font-weight: 400;">Leadership</span></h2>
+                <div style="width: 60px; height: 3px; background: #0d9488; margin: 20px auto 0;"></div>
+            </div>
             
-            <div class="grid-3">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; align-items: stretch;">
+                
                 <!-- Team Member 1 -->
-                <div class="card" style="text-align: center; padding: 30px;">
-                    <img src="image/team1.png" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.05);" alt="Head of Global Procurement">
-                    <h3 style="color: var(--text-heading); margin-bottom: 5px; font-size: 20px;">David Reynolds</h3>
-                    <p style="color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; margin-top: 0; margin-bottom: 15px;">Head of Global Procurement</p>
-                    <p style="font-size: 14px;">David manages MedAura Global's international supply chain, ensuring fast and compliant procurement of high-tier aesthetic lasers directly from leading global manufacturers.</p>
+                <div style="background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04); border: 1px solid rgba(13, 148, 136, 0.08); transition: all 0.3s ease; position: relative; z-index: 1;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 30px 60px rgba(13, 148, 136, 0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 20px 40px rgba(15, 23, 42, 0.04)';">
+                    <!-- Top Gradient Banner -->
+                    <div style="height: 120px; background: linear-gradient(135deg, #f0fdfa, #ccfbf1); position: relative;"></div>
+                    
+                    <div style="padding: 0 40px 40px 40px; text-align: center;">
+                        <!-- Overlapping Image -->
+                        <div style="margin-top: -60px; margin-bottom: 20px; position: relative; z-index: 2;">
+                            <img src="image/team1.png" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 6px solid #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: inline-block;" alt="David Reynolds">
+                        </div>
+                        
+                        <h3 style="color: #0f172a; margin: 0 0 5px 0; font-size: 24px; font-weight: 800;">David Reynolds</h3>
+                        <p style="color: #0d9488; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 20px 0;">Head of Global Procurement</p>
+                        
+                        <div style="height: 1px; background: rgba(15, 23, 42, 0.05); margin-bottom: 20px;"></div>
+                        
+                        <p style="font-size: 15px; color: #475569; line-height: 1.8; margin: 0; text-align: center;">David manages MedAura Global's international supply chain, ensuring fast and compliant procurement of high-tier aesthetic lasers directly from leading global manufacturers.</p>
+                    </div>
                 </div>
 
                 <!-- Team Member 2 -->
-                <div class="card" style="text-align: center; padding: 30px;">
-                    <img src="image/team2.png" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.05);" alt="Director of Regulatory Compliance">
-                    <h3 style="color: var(--text-heading); margin-bottom: 5px; font-size: 20px;">Sarah Lin, JD</h3>
-                    <p style="color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; margin-top: 0; margin-bottom: 15px;">Director of Regulatory Affairs</p>
-                    <p style="font-size: 14px;">Sarah brings over a decade of experience in cross-border medical trade laws, guiding our product portfolio through strict FDA and international compliance standards.</p>
+                <div style="background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04); border: 1px solid rgba(13, 148, 136, 0.08); transition: all 0.3s ease; position: relative; z-index: 1;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 30px 60px rgba(13, 148, 136, 0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 20px 40px rgba(15, 23, 42, 0.04)';">
+                    <div style="height: 120px; background: linear-gradient(135deg, #f0fdfa, #ccfbf1); position: relative;"></div>
+                    
+                    <div style="padding: 0 40px 40px 40px; text-align: center;">
+                        <div style="margin-top: -60px; margin-bottom: 20px; position: relative; z-index: 2;">
+                            <img src="image/team2.png" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 6px solid #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: inline-block;" alt="Sarah Lin">
+                        </div>
+                        
+                        <h3 style="color: #0f172a; margin: 0 0 5px 0; font-size: 24px; font-weight: 800;">Sarah Lin <span style="font-family: 'Times New Roman', serif; font-weight: 400; font-size: 20px; font-style: italic; color: #64748b;">, JD</span></h3>
+                        <p style="color: #0d9488; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 20px 0;">Director of Regulatory Affairs</p>
+                        
+                        <div style="height: 1px; background: rgba(15, 23, 42, 0.05); margin-bottom: 20px;"></div>
+                        
+                        <p style="font-size: 15px; color: #475569; line-height: 1.8; margin: 0; text-align: center;">Sarah brings over a decade of experience in cross-border medical trade laws, guiding our product portfolio through strict FDA and international compliance standards.</p>
+                    </div>
                 </div>
 
                 <!-- Team Member 3 -->
-                <div class="card" style="text-align: center; padding: 30px;">
-                    <img src="image/team3.png" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--bg-secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.05);" alt="VP of International Sales">
-                    <h3 style="color: var(--text-heading); margin-bottom: 5px; font-size: 20px;">Marcus Vance</h3>
-                    <p style="color: var(--accent); font-weight: 600; font-size: 14px; text-transform: uppercase; margin-top: 0; margin-bottom: 15px;">VP of International Sales</p>
-                    <p style="font-size: 14px;">Marcus oversees global business development, establishing strategic distribution networks and fostering relationships with top-tier aesthetic clinics worldwide.</p>
+                <div style="background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04); border: 1px solid rgba(13, 148, 136, 0.08); transition: all 0.3s ease; position: relative; z-index: 1;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 30px 60px rgba(13, 148, 136, 0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 20px 40px rgba(15, 23, 42, 0.04)';">
+                    <div style="height: 120px; background: linear-gradient(135deg, #f0fdfa, #ccfbf1); position: relative;"></div>
+                    
+                    <div style="padding: 0 40px 40px 40px; text-align: center;">
+                        <div style="margin-top: -60px; margin-bottom: 20px; position: relative; z-index: 2;">
+                            <img src="image/team3.png" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 6px solid #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: inline-block;" alt="Marcus Vance">
+                        </div>
+                        
+                        <h3 style="color: #0f172a; margin: 0 0 5px 0; font-size: 24px; font-weight: 800;">Marcus Vance</h3>
+                        <p style="color: #0d9488; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 20px 0;">VP of International Sales</p>
+                        
+                        <div style="height: 1px; background: rgba(15, 23, 42, 0.05); margin-bottom: 20px;"></div>
+                        
+                        <p style="font-size: 15px; color: #475569; line-height: 1.8; margin: 0; text-align: center;">Marcus oversees global business development, establishing strategic distribution networks and fostering relationships with top-tier aesthetic clinics worldwide.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- PHILANTHROPY -->
-    <section id="philanthropy" class="reveal">
+    <style>
+        .phil-grid {
+            display: flex;
+            align-items: center;
+        }
+        .phil-img-wrap {
+            width: 55%;
+            position: relative;
+            z-index: 1;
+        }
+        .phil-text-wrap {
+            width: 50%;
+            margin-left: -5%;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 992px) {
+            .phil-grid {
+                flex-direction: column;
+            }
+            .phil-img-wrap {
+                width: 100%;
+            }
+            .phil-text-wrap {
+                width: 100%;
+                margin-left: 0;
+                margin-top: -40px;
+            }
+        }
+    </style>
+    <section id="philanthropy" style="background: #f8fafc; padding: 120px 0; position: relative; overflow: hidden;">
         <div class="container">
-            <div class="grid-2" style="align-items: center;">
-                <div>
-                    <h3 style="color: var(--accent); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">Philanthropy</h3>
-                    <h2 style="margin-top: 0;">Healthcare Without Borders Initiative (2022)</h2>
-                    <p>
-                        In 2022, Maya led MedAura Global's "Healthcare Without Borders Initiative," partnering with nonprofit organizations to donate patient monitoring devices and essential medical equipment to community clinics in Southeast Asia.
-                    </p>
-                    <p>
-                        The initiative supplied digital blood pressure monitors, pulse oximeters, and portable oxygen concentrators to underserved healthcare facilities while also supporting clinical staff through equipment training and technical guidance.
-                    </p>
-                    <div style="margin-top: 30px; padding: 25px; border-radius: 8px; background: var(--bg-secondary);">
-                        <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--text-heading);">To date, the program has benefited more than <span style="color: var(--accent);">2,000 patients</span> by improving access to basic diagnostic and monitoring technologies in rural communities.</p>
+            <div class="phil-grid">
+                
+                <!-- Image Side -->
+                <div class="phil-img-wrap">
+                    <img src="photo_2026-07-04_08-21-07.jpg" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15); display: block;" alt="Healthcare Without Borders">
+                </div>
+
+                <!-- Text Side -->
+                <div class="phil-text-wrap">
+                    <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); padding: 60px; border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.06); border: 1px solid rgba(255, 255, 255, 0.8);">
+                        
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                            <div style="width: 40px; height: 3px; background: #0d9488;"></div>
+                            <h3 style="color: #0d9488; margin: 0; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; font-weight: 800;">Philanthropy</h3>
+                        </div>
+
+                        <h2 style="font-size: 44px; color: #0f172a; margin: 0 0 30px 0; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;">
+                            Healthcare Without Borders <span style="font-family: 'Times New Roman', serif; font-style: italic; color: #0d9488; font-weight: 400;">Initiative</span>
+                        </h2>
+
+                        <p style="font-size: 17px; color: #475569; line-height: 1.9; margin: 0 0 20px 0;">
+                            In 2022, Maya led MedAura Global's "Healthcare Without Borders Initiative," partnering with nonprofit organizations to donate patient monitoring devices and essential medical equipment to community clinics in Southeast Asia.
+                        </p>
+                        <p style="font-size: 17px; color: #475569; line-height: 1.9; margin: 0 0 40px 0;">
+                            The initiative supplied digital blood pressure monitors, pulse oximeters, and portable oxygen concentrators to underserved healthcare facilities while also supporting clinical staff through equipment training and technical guidance.
+                        </p>
+
+                        <!-- Clinical Metric Box -->
+                        <div style="padding: 25px 30px; background: #ffffff; border-radius: 12px; border-left: 5px solid #0d9488; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                            <p style="margin: 0; font-size: 18px; font-weight: 600; color: #0f172a; line-height: 1.6;">
+                                To date, the program has benefited more than <span style="color: #0d9488; font-size: 24px; font-weight: 800;">2,000 patients</span> by improving access to basic diagnostic technologies.
+                            </p>
+                        </div>
+                        
                     </div>
                 </div>
-                <div>
-                    <!-- Placeholder image -->
-                    <img src="image/phila.jpg" style="width: 100%; border-radius: 12px; border: 4px solid #ffffff; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);" alt="Healthcare Without Borders">
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
+    <style>
+        .contact-premium-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .contact-premium-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <section id="contact" style="background: #0f172a; padding: 120px 0; color: #ffffff; text-align: center;">
         <div class="container reveal">
-            <h2>Partner With Us</h2>
-            <p style="margin-bottom: 40px; max-width: 600px;">Connect with MedAura Global to discuss equipment sourcing, distribution partnerships, or healthcare technology integration.</p>
+            <h3 style="color: #0d9488; text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 20px; font-weight: 800;">Get in Touch</h3>
+            <h2 style="font-size: 48px; margin: 0 0 30px 0; font-weight: 800; letter-spacing: -1px;">Partner With <span style="font-family: 'Times New Roman', serif; font-style: italic; font-weight: 400; color: #ccfbf1;">MedAura</span></h2>
+            <p style="font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto 60px auto; line-height: 1.8;">
+                Connect with MedAura Global to discuss equipment sourcing, strategic distribution partnerships, or clinical technology integration.
+            </p>
 
-            <div class="contact-grid">
-                <div>
-                    <div class="card" style="height: 100%;">
-                        <h3 style="margin-top: 0;">Global Presence</h3>
-                        <p>MedAura Global operates across key international markets to facilitate seamless cross-border healthcare solutions.</p>
-                        
-                        <div style="margin-top: 40px;">
-                            <p style="color: var(--accent); margin-bottom: 5px; font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 1px;">Core Markets:</p>
-                            <p style="margin-top: 0; font-weight: 600; color: var(--text-heading);">North America, Asia-Pacific, Australia</p>
-                        </div>
-                        
-                        <div style="margin-top: 30px;">
-                            <p style="color: var(--accent); margin-bottom: 5px; font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 1px;">Contact Details:</p>
-                            <p style="margin-top: 0; font-weight: 600; color: var(--text-heading);">inquiries@medauraglobal.com</p>
-                        </div>
+            <div class="contact-premium-grid">
+                
+                <!-- Box 1 -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 50px 30px; border-radius: 24px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.borderColor='rgba(13, 148, 136, 0.3)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.borderColor='rgba(255, 255, 255, 0.05)';">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(13, 148, 136, 0.1); border: 1px solid rgba(13, 148, 136, 0.3); margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; color: #0d9488;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
+                    <h4 style="font-size: 18px; color: #ffffff; margin: 0 0 10px 0; font-weight: 700;">Global Presence</h4>
+                    <p style="color: #94a3b8; font-size: 15px; margin: 0; line-height: 1.6;">North America<br>Asia-Pacific<br>Australia</p>
                 </div>
 
-                <div class="contact-form">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" placeholder="Your name">
+                <!-- Box 2 -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 50px 30px; border-radius: 24px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.borderColor='rgba(13, 148, 136, 0.3)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.borderColor='rgba(255, 255, 255, 0.05)';">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(13, 148, 136, 0.1); border: 1px solid rgba(13, 148, 136, 0.3); margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; color: #0d9488;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Inquiry Type</label>
-                        <select>
-                            <option>Medical Device Sourcing</option>
-                            <option>Aesthetic Equipment Procurement</option>
-                            <option>Strategic Partnership</option>
-                            <option>Distribution Inquiry</option>
-                            <option>Other / General</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea rows="4" placeholder="How can we assist you?"></textarea>
-                    </div>
-                    <button class="btn-submit" onclick="submitForm()">Send Message</button>
+                    <h4 style="font-size: 18px; color: #ffffff; margin: 0 0 10px 0; font-weight: 700;">Direct Inquiries</h4>
+                    <p style="color: #94a3b8; font-size: 15px; margin: 0 0 15px 0; line-height: 1.6;">For distribution and <br>procurement partnerships.</p>
+                    <span style="display: inline-block; color: #0d9488; font-weight: 700; border-bottom: 1px solid #0d9488; padding-bottom: 2px;">inquiries@medauraglobal.com</span>
                 </div>
+
             </div>
         </div>
     </section>
