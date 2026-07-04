@@ -255,6 +255,40 @@
             transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
 
         .reveal.active {
             opacity: 1;
@@ -948,7 +982,7 @@
     </section>
 
     <!-- ABOUT MEDAURA GLOBAL (EDITORIAL SPLIT) -->
-    <section id="about" style="position: relative; display: flex; flex-wrap: wrap; min-height: 80vh;">
+    <section id="about" class="reveal" style="position: relative; display: flex; flex-wrap: wrap; min-height: 80vh;">
         <!-- Left Side: Typography -->
         <div style="flex: 1 1 500px; padding: 10% 5% 10% max(5%, calc((100% - 1200px) / 2)); background: #ffffff; display: flex; flex-direction: column; justify-content: center;">
             <h2 style="font-size: 56px; font-weight: 800; color: #0f172a; letter-spacing: -2px; line-height: 1.1; margin-bottom: 25px;">
@@ -1000,7 +1034,7 @@
         <!-- Background Ambient Glow -->
         <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 600px; background: radial-gradient(ellipse at top, rgba(94, 234, 212, 0.05) 0%, rgba(15, 23, 42, 0) 70%); pointer-events: none;"></div>
         
-        <div class="container" style="position: relative; z-index: 2;">
+        <div class="container reveal" style="position: relative; z-index: 2;">
             <div style="text-align: center; margin-bottom: 120px;">
                 <p style="color: #5eead4; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 14px; margin-bottom: 15px;">Our Expertise</p>
                 <h2 style="font-size: 56px; color: #ffffff; font-weight: 800; letter-spacing: -2px; margin: 0;">Comprehensive Capabilities</h2>
@@ -1287,7 +1321,7 @@
 
         <div class="container" style="position: relative; z-index: 2;">
             <!-- WOW FACTOR TITLE -->
-            <div style="position: relative; text-align: center; margin-bottom: 140px; padding-top: 60px;">
+            <div class="reveal-scale" style="position: relative; text-align: center; margin-bottom: 140px; padding-top: 60px;">
                 <!-- Massive Background Typography -->
                 <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); font-size: clamp(80px, 12vw, 200px); font-weight: 900; color: rgba(15, 23, 42, 0.03); text-transform: uppercase; letter-spacing: -2px; z-index: 0; pointer-events: none; line-height: 1; white-space: nowrap; font-family: 'Arial Black', sans-serif;">LEADERSHIP</div>
                 
@@ -1307,10 +1341,10 @@
                 
                 <!-- Row 1: Image Left, Text Right -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                    <div>
+                    <div class="reveal-left">
                         <img src="image/maya1.jpg" alt="Maya Miller" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15); object-fit: cover;">
                     </div>
-                    <div>
+                    <div class="reveal-right">
                         <div style="border-bottom: 1px solid rgba(15, 23, 42, 0.1); padding-bottom: 25px; margin-bottom: 30px;">
                             <h3 style="font-size: 56px; color: #0f172a; margin: 0 0 10px 0; font-weight: 800; letter-spacing: -1px;">Maya Miller</h3>
                             <p style="font-size: 22px; color: #0d9488; margin: 0; font-weight: 500; letter-spacing: 0.5px;">Senior Partner, MedAura Global</p>
@@ -1326,7 +1360,7 @@
 
                 <!-- Row 2: Text Left, Image Right -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="reveal-left" style="display: flex; flex-direction: column; justify-content: center;">
                         <p style="font-size: 18px; color: #475569; line-height: 1.9; margin: 0 0 20px 0;">
                             Throughout her career, Maya has successfully built strategic partnerships between manufacturers, distributors, hospitals, and aesthetic clinics, helping healthcare organizations access advanced medical technologies through efficient international supply chains.
                         </p>
@@ -1342,7 +1376,7 @@
                             <p style="font-size: 15px; color: #64748b; margin: 0; line-height: 1.7;">At the age of 19, Maya was selected for an international academic exchange program and continued her joint studies in <strong style="color: #0f172a;">Berkeley, California</strong>, focusing on international business management.</p>
                         </div>
                     </div>
-                    <div>
+                    <div class="reveal-right">
                         <img src="image/maya2.jpg" alt="Maya Miller" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15); object-fit: cover;">
                     </div>
                 </div>
@@ -1353,7 +1387,7 @@
 
     <!-- CLINICAL CHART TIMELINE (PROFESSIONAL JOURNEY) -->
     <section style="background: #f8fafc; padding-bottom: 120px; position: relative;">
-        <div class="container">
+        <div class="container reveal">
             <h3 style="font-size: 32px; color: #0f172a; margin-bottom: 60px; font-weight: 800; text-align: center;">Professional Journey</h3>
             
             <div style="max-width: 1200px; margin: 0 auto;">
@@ -1457,7 +1491,7 @@
 
     <!-- EXECUTIVE TEAM -->
     <section id="team" style="background: #f8fafc; padding: 100px 0; position: relative;">
-        <div class="container">
+        <div class="container reveal">
             <div style="text-align: center; margin-bottom: 70px;">
                 <h2 style="font-size: 50px; color: #0f172a; font-weight: 800; letter-spacing: -1.5px; margin: 0;">Executive <span style="font-family: 'Times New Roman', serif; font-style: italic; color: #0d9488; font-weight: 400;">Leadership</span></h2>
                 <div style="width: 60px; height: 3px; background: #0d9488; margin: 20px auto 0;"></div>
@@ -1557,7 +1591,7 @@
         }
     </style>
     <section id="philanthropy" style="background: #f8fafc; padding: 120px 0; position: relative; overflow: hidden;">
-        <div class="container">
+        <div class="container reveal">
             <div class="phil-grid">
                 
                 <!-- Image Side -->
@@ -1673,7 +1707,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
 
         // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
