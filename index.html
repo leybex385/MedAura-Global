@@ -182,6 +182,7 @@
             font-weight: 700;
             letter-spacing: 1.5px;
             font-size: 12px;
+            white-space: nowrap;
             transition: all 0.4s ease !important;
             box-shadow: 0 10px 20px rgba(13, 148, 136, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1222,97 +1223,7 @@
         </div>
     </section>
 
-    <!-- MAYA MILLER FOCUS: CLINICAL PRECISION (OPTION 3) -->
-    <style>
-        .clinical-timeline {
-            margin-top: 40px;
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-        .clinical-timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: linear-gradient(to bottom, rgba(13, 148, 136, 0), rgba(13, 148, 136, 0.4) 10%, rgba(13, 148, 136, 0.4) 90%, rgba(13, 148, 136, 0));
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-        .clinical-timeline-item {
-            padding: 10px 50px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-top: -40px; /* Pulls items closer for a tight zigzag */
-        }
-        .clinical-timeline-item:first-child {
-            margin-top: 0;
-        }
-        .clinical-timeline-item.left {
-            left: 0;
-            text-align: right;
-        }
-        .clinical-timeline-item.right {
-            left: 50%;
-            text-align: left;
-        }
-        .clinical-timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background-color: #ffffff;
-            border: 4px solid #0d9488;
-            top: 50px;
-            border-radius: 50%;
-            z-index: 2;
-            box-shadow: 0 0 0 6px rgba(13, 148, 136, 0.1);
-        }
-        .clinical-timeline-item.left::after {
-            right: -13px;
-        }
-        .clinical-timeline-item.right::after {
-            left: -13px;
-        }
-        .timeline-content {
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
-            border: 1px solid rgba(13, 148, 136, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            z-index: 1;
-        }
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(13, 148, 136, 0.12);
-        }
-        .frosted-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255,255,255,0.5);
-            padding: 50px;
-        }
-        .clinical-photo {
-            width: 100%;
-            display: block;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15);
-            border: 4px solid #ffffff;
-            transition: transform 0.4s ease;
-        }
-        .clinical-photo:hover {
-            transform: translateY(-5px);
-        }
-    </style>
+
 
     <section id="leadership" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 120px 0; position: relative; overflow: hidden;">
         <!-- Clean Room Background Accents -->
@@ -1385,76 +1296,7 @@
         </div>
     </section>
 
-    <!-- CLINICAL CHART TIMELINE (PROFESSIONAL JOURNEY) -->
-    <section style="background: #f8fafc; padding-bottom: 120px; position: relative;">
-        <div class="container reveal">
-            <h3 style="font-size: 32px; color: #0f172a; margin-bottom: 60px; font-weight: 800; text-align: center;">Professional Journey</h3>
-            
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <div class="clinical-timeline">
-                    <!-- 2009 (Left) -->
-                    <div class="clinical-timeline-item left">
-                        <div class="timeline-content">
-                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2009</div>
-                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">International Business Specialist</div>
-                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">Shanghai International Trade Group</div>
-                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Began her career in international trade, managing overseas procurement, supplier relationships, and export operations.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 2010 (Right) -->
-                    <div class="clinical-timeline-item right">
-                        <div class="timeline-content">
-                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2010</div>
-                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Project Manager</div>
-                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">US & Canadian Markets</div>
-                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Promoted after demonstrating outstanding performance. Responsible for International Customer Relations and Project Coordination.</p>
-                        </div>
-                    </div>
 
-                    <!-- 2014 (Left) -->
-                    <div class="clinical-timeline-item left">
-                        <div class="timeline-content">
-                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2014</div>
-                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Global Leadership Development Program</div>
-                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">New York</div>
-                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Selected for the company's elite program. Completed a six-month management assignment in NY, working alongside multinational teams in international trade, healthcare distribution, and strategic operations.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2015 (Right) -->
-                    <div class="clinical-timeline-item right">
-                        <div class="timeline-content">
-                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2015</div>
-                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Asia-Pacific Regional Business Manager</div>
-                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">APAC Division</div>
-                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Led regional commercial expansion across Asia-Pacific while managing distributor partnerships, international procurement, and cross-border healthcare projects.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2016 (Left) -->
-                    <div class="clinical-timeline-item left">
-                        <div class="timeline-content">
-                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2016</div>
-                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Independent Consulting Career</div>
-                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">Global Markets</div>
-                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Accepted an invitation from a U.S. international business consulting firm. Provided cross-border business consulting services across US, China, and Australia.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2018 (Right) -->
-                    <div class="clinical-timeline-item right">
-                        <div class="timeline-content">
-                            <div style="font-weight: 800; color: #0d9488; font-size: 32px; margin-bottom: 5px; font-family: 'Times New Roman', serif; font-style: italic;">2018</div>
-                            <div style="font-size: 22px; color: #0f172a; font-weight: 800; margin-bottom: 10px;">Co-founded MedAura Global</div>
-                            <div style="font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 700;">Executive Leadership</div>
-                            <p style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0;">Established the international strategy to help healthcare providers access innovative medical technologies globally.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- EXPERTISE -->
     <section id="expertise" style="background-color: var(--bg-tertiary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);" class="reveal pattern-lines">
@@ -1482,10 +1324,7 @@
                 </div>
             </div>
             
-            <div class="card" style="margin-top: 40px; background: #ffffff;">
-                <h4 style="color: var(--accent); margin-top: 0; font-size: 20px;">Multidisciplinary Team Oversight</h4>
-                <p>Maya oversees a team of 15 professionals specializing in: International Sales, Medical Device Procurement, Regulatory Compliance, Supply Chain Management, Global Logistics, Customer Success, and Business Development.</p>
-            </div>
+
         </div>
     </section>
 
@@ -1719,11 +1558,9 @@
             };
 
             hamburger.addEventListener('click', toggleMenu);
-            hamburger.addEventListener('touchstart', toggleMenu, { passive: true });
 
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => navLinks.classList.remove('active'));
-                link.addEventListener('touchstart', () => navLinks.classList.remove('active'), { passive: true });
             });
         }
     </script>
